@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventsLambdasAndDelegates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -9,9 +10,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Mediator m = Mediator.GetInstance();
-            Mediator m2 = Mediator.GetInstance();
 
+            EmployeesOnJob em = new EmployeesOnJob();
+             Mediator.GetInstance().OnJobChanged(new object(),new Job() { Id = 2});
             //MyDelegate d = delegate (int n) {
             //    return n;
             //};
@@ -70,25 +71,5 @@ namespace ConsoleApp1
     //{
     //    public int Hours { get; set; } = 5;
     //}
-    public class Mediator
-    {
-        public static readonly Mediator _Instance = new Mediator();
-        private Mediator() { }
-
-        public static Mediator GetInstance()
-        {
-            return _Instance;
-
-        }
-    }
-    public class CustomEventArgs : EventArgs
-    {
-        public Job Job{ get; set; }
-    }
-    public class Job
-    {
-        public int Id{ get; set; }
-        public string Name{ get; set; }
-    }
 
 }
