@@ -71,5 +71,18 @@ namespace ConsoleApp1
     //{
     //    public int Hours { get; set; } = 5;
     //}
-
+    //public void ShowProgress(int i)
+    //{
+    //    //this is hit if a background thread calls show progress
+    //    if(lblOutput.InvokdeRequired == true)
+    //    {
+    //        var del = new ShowProgressDelegate(ShowProgress);
+    //        this.BeginInvoke(del, new object[] { i});
+    //    }
+    //    else
+    //    {
+    //        lblOutput.Text = i.ToString();
+    //        pbStatus.Value = i;
+    //    }
+    //}
 }
